@@ -2276,7 +2276,29 @@ export async function POST(request: Request) {
 
 <details>
 <summary><code>credits/page.tsx</code></summary>
+#MONGODB
+MONGODB_URL="mongodb://0.0.0.0/imaginify"
+#"mongodb+srv://makiagodwill:ELPyfQF8Al7ZBIli@mydatase.b6v7i.mongodb.net/imaginify"
 
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YXNzdXJpbmctdG9ydG9pc2UtNDcuY2xlcmsuYWNjb3VudHMuZGV2JA
+CLERK_SECRET_KEY=sk_test_HTi09nxuPXd2My0ZxsvPjxGkcKLsOTF6SFOe0SlccL
+CLERK_WEBHOOK_SECRET=whsec_+HMVKO5SOLmmcs/F/k4F8PRYKx9mncsu
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+#CLOUDINARY
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME= dyf21ulbr
+CLOUDINARY_API_KEY= 918656153585713
+CLOUDINARY_API_SECRET= sEEFhHhCrldL5WDEkLsyJOiw_LY
+
+#STRIPE
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
 ```typescript
 import { SignedIn, auth } from "@clerk/nextjs";
 import Image from "next/image";
