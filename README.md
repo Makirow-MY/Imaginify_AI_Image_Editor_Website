@@ -149,7 +149,29 @@ CLOUDINARY_API_SECRET=
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
-```
+```#MONGODB
+MONGODB_URL="mongodb://0.0.0.0/imaginify"
+#"mongodb+srv://makiagodwill:ELPyfQF8Al7ZBIli@mydatase.b6v7i.mongodb.net/imaginify"
+
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YXNzdXJpbmctdG9ydG9pc2UtNDcuY2xlcmsuYWNjb3VudHMuZGV2JA
+CLERK_SECRET_KEY=sk_test_HTi09nxuPXd2My0ZxsvPjxGkcKLsOTF6SFOe0SlccL
+CLERK_WEBHOOK_SECRET=whsec_+HMVKO5SOLmmcs/F/k4F8PRYKx9mncsu
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+#CLOUDINARY
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME= dyf21ulbr
+CLOUDINARY_API_KEY= 918656153585713
+CLOUDINARY_API_SECRET= sEEFhHhCrldL5WDEkLsyJOiw_LY
+NEXT_PUBLIC_SERVER_URL = http://localhost:3001
+#STRIPE
+STRIPE_SECRET_KEY= sk_test_51SAIvs3udQAZ5qQhy31BCCBTGKnkRNmvhW1W9GJt1BK4ZUuCXrniQJjOc4xDbqYj6laihkLnuWzcbEl9sVnCjYnH00IZxcF5O0
+STRIPE_WEBHOOK_SECRET= whsec_nF5hJwcwNBmZqSscw6mJFDMMSNxX6liz
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY= pk_test_51SAIvs3udQAZ5qQhnr3ZFoTRhhsw1sQJKT3Wx6ZbGBM2AM8E8jDBQDUF8B3t8R3P4DCtODe10lDjyrW8orj1CLTP00K4Oor0ID
 
 Replace the placeholder values with your actual respective account credentials. You can obtain these credentials by signing up on the [Clerk](https://clerk.com/), [MongoDB](https://www.mongodb.com/), [Cloudinary](https://cloudinary.com/) and [Stripe](https://stripe.com)
 
