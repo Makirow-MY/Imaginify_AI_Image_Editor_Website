@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 interface SearchParamProps {
+  
   searchParams: Promise<{ page?: string; query?: string }>;
 }
 
