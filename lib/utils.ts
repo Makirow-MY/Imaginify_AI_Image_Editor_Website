@@ -12,13 +12,13 @@ export function cn(...inputs: ClassValue[]) {
 // ERROR HANDLER
 export const handleError = (error: unknown) => {
   if (error instanceof Error) {
-    console.error(error.message);
+    console.log(error.message);
     return; // Return void instead of throwing
   } else if (typeof error === "string") {
-    console.error(error);
+    console.log(error);
     return;
   } else {
-    console.error("Unknown error:", JSON.stringify(error));
+    console.log("Unknown error:", JSON.stringify(error));
     return;
   }
 };
@@ -105,7 +105,7 @@ export const getImageSize = (
 // DOWNLOAD IMAGE
 export const download = (url: string, filename: string) => {
   if (!url) {
-    console.error("Resource URL not provided!");
+    console.log("Resource URL not provided!");
     return;
   }
   fetch(url)
@@ -121,7 +121,7 @@ export const download = (url: string, filename: string) => {
       document.body.removeChild(a);
       URL.revokeObjectURL(blobURL);
     })
-    .catch((error) => console.error("Download failed:", error));
+    .catch((error) => console.log("Download failed:", error));
 };
 
 // DEEP MERGE OBJECTS

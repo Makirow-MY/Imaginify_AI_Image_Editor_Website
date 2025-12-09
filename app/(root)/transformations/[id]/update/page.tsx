@@ -13,8 +13,8 @@ const Page = async ({
   params: Promise<{ id: string }>;
 }) => {
   const { id } = await params;
-  const { userId } = auth();
-
+  const { userId } = await auth();
+console.log("transformationTypes", auth());
   if (!userId) redirect("/sign-in");
 
   const user = await getUserById(userId);
