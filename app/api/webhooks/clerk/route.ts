@@ -68,13 +68,13 @@ export async function POST(req: Request) {
     const newUser = await createUser(user);
 
     // Set public metadata on Clerk user
-    if (newUser) {
-      await clerkClient.users.updateUserMetadata(id!, {
-        publicMetadata: {
-          userId: newUser._id.toString(),
-        },
-      });
-    }
+    // if (newUser) {
+    //   await clerkClient.users.updateUserMetadata(id!, {
+    //     publicMetadata: {
+    //       userId: newUser._id.toString(),
+    //     },
+    //   });
+    // }
 
     return NextResponse.json({ message: 'New user created' }, { status: 200 });
   }
