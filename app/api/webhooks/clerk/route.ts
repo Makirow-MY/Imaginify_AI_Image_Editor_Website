@@ -32,7 +32,7 @@ export async function POST(req: Request) {
 
   // Create a new Svix instance with your secret.
   console.log("Using webhook secret:", body)
-  const wh = new Webhook("whsec_+HMVKO5SOLmmcs/F/k4F8PRYKx9mncsu");
+  const wh = new Webhook(WEBHOOK_SECRET);
 
   let evt: WebhookEvent;
 
