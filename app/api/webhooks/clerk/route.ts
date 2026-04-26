@@ -68,13 +68,18 @@ export async function POST(req: Request) {
     const newUser = await createUser(user);
 
     // Set public metadata on Clerk user
-    // if (newUser) {
-    //   await clerkClient.users.updateUserMetadata(id!, {
-    //     publicMetadata: {
-    //       userId: newUser._id.toString(),
-    //     },
-    //   });
-    // }
+    if (newUser) {
+      await clerkClient().then(client => 
+      {  console.log('Created new user in MongoDB with ID:', newUser, client);
+      client.users.updateUserMetadata(id!, {
+          publicMetadata: {
+            userId: newUser._id,
+          },
+        })
+      }
+      ).catch(err => {        console.error('Error updating Clerk user metadata:', err);
+      }      );
+    }
 
     return NextResponse.json({ message: 'New user created' }, { status: 200 });
   }

@@ -1,6 +1,6 @@
 import mongoose, { Mongoose } from 'mongoose';
 
-const MONGODB_URL = process.env.MONGODB_URL;
+const MONGODB_URL = process.env.MONGODB_URL!;
 
 interface MongooseConnection {
   conn: Mongoose | null;
@@ -30,7 +30,7 @@ export const connectToDatabase = async () => {
    if (mongoose.connection.readyState === 1) {
        return mongoose.connection.asPromise();
     } else {
-        const url = "mongodb://0.0.0.0/imaginify";
+        const url = MONGODB_URL;
         return mongoose.connect(url, {
       bufferCommands: false, // Disable buffering for serverless
   });
