@@ -40,7 +40,7 @@ export const Collection = ({
     const newUrl = formUrlQuery({
       searchParams: searchParams.toString(),
       key: "page",
-      value: pageValue,
+      value: `${pageValue}`,
     });
 
     router.push(newUrl, { scroll: false });
