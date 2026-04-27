@@ -1,8 +1,11 @@
 import { Collection } from "@/components/shared/Collection"
 import { navLinks } from "@/constants"
 import { getAllImages } from "@/lib/actions/image.actions"
+import { getUserById } from "@/lib/actions/user.actions"
+import { auth } from "@clerk/nextjs/server"
 import Image from "next/image"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 
 interface SearchParamProps {
   
@@ -14,8 +17,15 @@ const Home = async ({ searchParams }: SearchParamProps) => {
   const params = await searchParams;
   const page = Number(params?.page) || 1;
   const searchQuery = (params?.query as string) || '';
-
-  const images = await getAllImages({ page, searchQuery });
+ const { userId } = await auth();
+ 
+  if (!userId) redirect("/sign-in");
+  const user = await getUserById(userId);
+  if (!user) {
+   
+    redirect("/sign-in"); // Redirect if user not found in MongoDB
+  }
+  const images = await getAllImages({ page, searchQuery, authorId: user.id });
 
   return (
     <>

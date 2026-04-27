@@ -14,7 +14,7 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
   const params = await searchParams;
   const page = Number(params?.page) || 1;
   const { userId } = await auth();
-  console.log("UserID in profile page:", userId);
+ 
   if (!userId) redirect("/sign-in");
   const user = await getUserById(userId);
   if (!user) {

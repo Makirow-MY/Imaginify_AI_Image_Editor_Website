@@ -71,8 +71,9 @@ export async function getImageById(imageId: string) {
   }
 }
 // GET IMAGES
-export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
+export async function getAllImages({ limit = 9, page = 1, searchQuery = '', authorId }: {
   limit?: number;
+  authorId: string;
   page: number;
   searchQuery?: string;
 }) {
@@ -97,9 +98,11 @@ export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
       query = {
         publicId: {
           $in: resourceIds
+        },
+         auhor:  authorId
         }
       }
-    }
+    
     const skipAmount = (Number(page) -1) * limit;
     const images = await populateUser(Image.find(query))
       .sort({ updatedAt: -1 })
