@@ -18,8 +18,8 @@ const Home = async ({ searchParams }: SearchParamProps) => {
   const page = Number(params?.page) || 1;
   const searchQuery = (params?.query as string) || '';
  const { userId } = await auth();
- 
-  if (!userId) redirect("/sign-in");
+ console.log(userId);
+ // if (!userId) redirect("/sign-in");
   const user = await getUserById(userId);
   if (!user) {
    
