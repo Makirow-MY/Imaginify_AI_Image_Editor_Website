@@ -20,7 +20,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
  const { userId } = await auth();
  console.log(userId);
  // if (!userId) redirect("/sign-in");
-  const user = await getUserById(userId? "yytyt");
+  const user = await getUserById(userId ?? "yytyt");
   if (!user) {
    
     redirect("/sign-in"); // Redirect if user not found in MongoDB
