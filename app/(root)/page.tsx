@@ -18,7 +18,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
   const page = Number(params?.page) || 1;
   const searchQuery = (params?.query as string) || '';
  const { userId } = await auth();
- console.log(userId);
+ 
  // if (!userId) redirect("/sign-in");
  // Redirect if not authenticated via Clerk
   if (!userId) {
@@ -26,10 +26,10 @@ const Home = async ({ searchParams }: SearchParamProps) => {
   }
 
   const user = await getUserById(userId);
-
+console.log({userId, user });
   // If Clerk user exists but not in your MongoDB → handle it
   if (!user) {
-    redirect("/sign-up?step=complete"); // or create user automatically
+    //redirect("/sign-up?step=complete"); // or create user automatically
   }
   const images = await getAllImages({ page, searchQuery, authorId: user.id });
 
