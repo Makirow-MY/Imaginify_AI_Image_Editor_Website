@@ -8,12 +8,11 @@ const isPublicRoute = createRouteMatcher([
   '/api/webhooks/stripe',
 ]);
 
-export default clerkMiddleware((auth, req) => {
-  // Protect all routes except public ones
- if (!isPublicRoute(req)) {
+export default clerkMiddleware(async (auth, req) => {
+  if (!isPublicRoute(req)) {
     await auth.protect() // Redirects unauthenticated users to /sign-in
   }
-});
+})
 
 export const config = {
   matcher: ['/((?!.*\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
