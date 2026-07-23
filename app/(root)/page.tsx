@@ -29,7 +29,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 console.log({userId, user });
   // If Clerk user exists but not in your MongoDB → handle it
   if (!user) {
-    //redirect("/sign-up?step=complete"); // or create user automatically
+    redirect("/sign-in"); // or create user automatically
   }
   const images = await getAllImages({ page, searchQuery, authorId: user.id });
 
